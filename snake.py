@@ -193,6 +193,7 @@ def main():
 
     setWindowPositionCentered(size, size)
     window = pygame.display.set_mode((size, size))
+    pygame.display.set_caption("Snake wants snack!")
     setWindowColor(window, green)
 
     clock = pygame.time.Clock()
