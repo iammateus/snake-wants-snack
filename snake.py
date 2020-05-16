@@ -1,5 +1,4 @@
 import os
-import math
 import random
 import pygame
 import tkinter as tk
@@ -182,6 +181,13 @@ def changeFoodPosition(rows):
     
     food = randomPosition
 
+def messageBox(subject, content):
+    root = tk.Tk()
+    root.attributes("-topmost", True)
+    root.withdraw()
+    messagebox.showinfo(title=subject, message=content)
+
+
 def main():
     size = 400
     rows = 16
@@ -207,7 +213,7 @@ def main():
             move()
             pass
         else:
-            messagebox.showinfo(title='Oh no!', message='You hit your head on the wall')
+            messageBox('Oh no!', 'You hit your head on the wall!')
             pygame.quit()
             exit()
 
