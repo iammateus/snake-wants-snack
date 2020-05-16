@@ -54,36 +54,38 @@ def eventListeners():
     global direction
 
     aux = direction
+    
     for event in pygame.event.get():
+        
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
     
         keys = pygame.key.get_pressed()
-        for key in keys:
-            if(keys[pygame.K_LEFT]):
-                if(aux != 'right'):
-                    direction = 'left'
-                    # print('left')
+
+        if(keys[pygame.K_LEFT]):
+            if(aux != 'right'):
+                direction = 'left'
+                # print('left')
             
-            if(keys[pygame.K_RIGHT]):
-                if(aux != 'left'):
-                    direction = 'right'
-                    # print('right')
+        if(keys[pygame.K_RIGHT]):
+            if(aux != 'left'):
+                direction = 'right'
+                # print('right')
             
-            if(keys[pygame.K_UP]):
-                if(aux != 'down'):
-                    direction = 'up'
-                    # print('up')
+        if(keys[pygame.K_UP]):
+            if(aux != 'down'):
+                direction = 'up'
+                # print('up')
             
-            if(keys[pygame.K_DOWN]):
-                if(aux != 'up'):
-                    direction = 'down'
-                    # print('down')
+        if(keys[pygame.K_DOWN]):
+            if(aux != 'up'):
+                direction = 'down'
+                # print('down')
             
-            if(keys[pygame.K_ESCAPE]):
-                pygame.quit()
-                exit()      
+        if(keys[pygame.K_ESCAPE]):
+            pygame.quit()
+            exit()      
 
 def redrawSnake(window, size, rows):
     blockSize = size // rows
