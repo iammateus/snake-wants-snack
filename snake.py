@@ -207,7 +207,7 @@ def main():
             move()
             pass
         else:
-            messagebox.showinfo(title='Oh no!', message='You have hit your head on the wall')
+            messagebox.showinfo(title='Oh no!', message='You hit your head on the wall')
             pygame.quit()
             exit()
 
