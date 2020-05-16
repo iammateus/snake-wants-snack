@@ -187,7 +187,6 @@ def messageBox(subject, content):
     root.withdraw()
     messagebox.showinfo(title=subject, message=content)
 
-
 def main():
     size = 400
     rows = 16
