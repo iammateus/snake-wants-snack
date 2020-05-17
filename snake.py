@@ -207,7 +207,6 @@ def main():
 
         if not willSnakeHitItsHead(rows):
             move()
-            pass
         else:
             messageBox('Oh no!', 'You hit your head on the wall!')
             pygame.quit()
