@@ -50,6 +50,7 @@ def listenToEvents():
     global direction
 
     aux = direction
+    turns = []
     
     for event in pygame.event.get():
         
@@ -57,31 +58,33 @@ def listenToEvents():
             pygame.quit()
             exit()
     
-        keys = pygame.key.get_pressed()
+    keys = pygame.key.get_pressed()
 
-        if(keys[pygame.K_LEFT]):
-            if(aux != 'right'):
-                direction = 'left'
-                # print('left')
-            
-        if(keys[pygame.K_RIGHT]):
-            if(aux != 'left'):
-                direction = 'right'
-                # print('right')
-            
-        if(keys[pygame.K_UP]):
-            if(aux != 'down'):
-                direction = 'up'
-                # print('up')
-            
-        if(keys[pygame.K_DOWN]):
-            if(aux != 'up'):
-                direction = 'down'
-                # print('down')
-            
-        if(keys[pygame.K_ESCAPE]):
-            pygame.quit()
-            exit()      
+    if(keys[pygame.K_LEFT]):
+        if(aux != 'right'):
+            turns.append('left')
+        
+    if(keys[pygame.K_RIGHT]):
+        if(aux != 'left'):
+            turns.append('right')
+        
+    if(keys[pygame.K_UP]):
+        if(aux != 'down'):
+            turns.append('up')
+        
+    if(keys[pygame.K_DOWN]):
+        if(aux != 'up'):
+            turns.append('down')
+        
+    if(keys[pygame.K_ESCAPE]):
+        pygame.quit()
+        exit()      
+    
+    if len(turns) > 0:
+        for turn in turns:
+            if turn != aux:
+                print("CHANGING FROM: " + direction + " to " + turn)
+                direction = turn
 
 def redrawSnake(window, size, rows):
     blockSize = size // rows
@@ -125,6 +128,7 @@ def getNextPosition():
 
 def move():
 
+    print('moving')
     aux = snake[0]
 
     snake[0] = getNextPosition();
