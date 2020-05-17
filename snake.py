@@ -46,7 +46,7 @@ def redrawWindow(window, size, rows):
     window.fill(green)
     drawGrid(window, size, rows);
 
-def eventListeners():
+def listenToEvents():
     global direction
 
     aux = direction
@@ -203,7 +203,7 @@ def main():
         pygame.time.delay(50)
         clock.tick(8)
 
-        eventListeners()
+        listenToEvents()
 
         if not willSnakeHitItsHead(rows):
             move()
