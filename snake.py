@@ -30,9 +30,6 @@ def setWindowPositionCentered(width, height):
     os.environ['SDL_VIDEO_WINDOW_POS'] = '%i,%i' % (positionX,positionY)
     os.environ['SDL_VIDEO_CENTERED'] = '0'
 
-def setWindowColor(window, rgb):
-    window.fill(rgb)
-
 def drawGrid(window, size, rows):
     blockSize = size // rows
 
@@ -46,7 +43,7 @@ def drawGrid(window, size, rows):
         pygame.draw.line(window, white, (x, 0), (x, size))
 
 def redrawWindow(window, size, rows):
-    window.fill((119, 195, 43))
+    window.fill(green)
     drawGrid(window, size, rows);
 
 def eventListeners():
@@ -194,7 +191,6 @@ def main():
     setWindowPositionCentered(size, size)
     window = pygame.display.set_mode((size, size))
     pygame.display.set_caption("Snake wants snack!")
-    setWindowColor(window, green)
 
     clock = pygame.time.Clock()
 
