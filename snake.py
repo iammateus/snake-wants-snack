@@ -90,18 +90,18 @@ def redrawSnake(window, size, rows):
     blockSize = size // rows
 
     for block in snake:
-        xPosition = block['positionX'] * blockSize
-        yPosition = block['positionY'] * blockSize
+        positionX = block['positionX'] * blockSize
+        positionY = block['positionY'] * blockSize
 
-        pygame.draw.rect(window, snakeColor, (xPosition + 1, yPosition + 1, blockSize - 1, blockSize - 1))
+        pygame.draw.rect(window, snakeColor, (positionX + 1, positionY + 1, blockSize - 1, blockSize - 1))
 
 def redrawFood(window, size, rows):
     blockSize = size // rows
 
-    xPosition = food['positionX'] * blockSize
-    yPosition = food['positionY'] * blockSize
+    positionX = food['positionX'] * blockSize
+    positionY = food['positionY'] * blockSize
 
-    pygame.draw.rect(window, yellow, (xPosition + 1, yPosition + 1, blockSize - 1, blockSize - 1))
+    pygame.draw.rect(window, yellow, (positionX + 1, positionY + 1, blockSize - 1, blockSize - 1))
 
 def getNextPosition():
     
