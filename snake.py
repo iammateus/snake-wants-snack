@@ -44,7 +44,7 @@ def drawGrid(window, size, rows):
 
 def redrawWindow(window, size, rows):
     window.fill(green)
-    drawGrid(window, size, rows);
+    drawGrid(window, size, rows)
 
 def listenToEvents():
     global direction
@@ -131,7 +131,7 @@ def move():
     print('moving')
     aux = snake[0]
 
-    snake[0] = getNextPosition();
+    snake[0] = getNextPosition()
     
     index = 0
     for block in snake:
