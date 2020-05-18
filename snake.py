@@ -194,7 +194,6 @@ def main():
     changeFoodPosition(rows)
     
     state = True
-
     while state:
 
         pygame.time.delay(50)
