@@ -1,10 +1,9 @@
 import os
-import random
 import pygame
 import tkinter as tk
+from random import randrange
 from tkinter import messagebox
 from screeninfo import get_monitors
-from random import randrange
 
 green = (119, 195, 43)
 white = (255, 255, 255)
