@@ -86,22 +86,15 @@ def listenToEvents():
                 print("CHANGING FROM: " + direction + " to " + turn)
                 direction = turn
 
-def redrawSnake(window, size, rows):
+def redrawElement(window, size, rows, element, color):
     blockSize = size // rows
 
-    for block in snake:
-        positionX = block['positionX'] * blockSize
-        positionY = block['positionY'] * blockSize
+    for block in element:
+        # (position) + 1 for a better positioning of the block
+        positionX = block['positionX'] * blockSize + 1
+        positionY = block['positionY'] * blockSize + 1
 
-        pygame.draw.rect(window, snakeColor, (positionX + 1, positionY + 1, blockSize - 1, blockSize - 1))
-
-def redrawFood(window, size, rows):
-    blockSize = size // rows
-
-    positionX = food['positionX'] * blockSize
-    positionY = food['positionY'] * blockSize
-
-    pygame.draw.rect(window, yellow, (positionX + 1, positionY + 1, blockSize - 1, blockSize - 1))
+        pygame.draw.rect(window, color, (positionX, positionY, blockSize - 1, blockSize - 1))
 
 def getNextPosition():
     
@@ -217,8 +210,8 @@ def main():
             exit()
 
         redrawWindow(window, size, rows)
-        redrawFood(window, size, rows)
-        redrawSnake(window, size, rows)
+        redrawElement(window, size, rows, [ food ], yellow)
+        redrawElement(window, size, rows, snake, snakeColor)
         pygame.display.update()
         
         if didSnakeEat():
