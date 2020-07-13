@@ -26,3 +26,6 @@ $ pip3 install pygame
 ## Run the game
 
     $ python3 main.py
+
+## License
+[MIT](https://github.com/iammateus/snake-wants-snack/blob/master/LICENSE)
